@@ -19,23 +19,24 @@ public:
 	NormalCalculator();
 	~NormalCalculator();
 
-	double Add(double a, double b);
+	double Add(double rhs, double lhs);
 
-	double Subtract(double a, double b);
+	double Subtract(double rhs, double lhs);
 
-	double Divide(double a, double b);
+	double Divide(double rhs, double lhs);
 
-	double Multiply(double a, double b);
+	double Multiply(double rhs, double lhs);
 
-	double Power(double a, double b);
+	double Power(double base, double exponent);
 
-	double Log(double a, double b);
+	double Log(double num);
 
-	double Factorial(double a, double b);
+	double Factorial(double num);
 
-	double PrintHistory(double a, double b);
+	vector<string> PrintHistory() const;
 private:
-	vector<string> history_;
+	vector<string> history;
+	double FactorialHelper(double x);
 };
 #endif /* NormalCalculator_h */
 

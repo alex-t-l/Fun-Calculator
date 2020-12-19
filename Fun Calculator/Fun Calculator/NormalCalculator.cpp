@@ -7,45 +7,61 @@
 
 #include "NormalCalculator.h"
 
-double Add(double a, double b)
+double NormalCalculator::Add(double rhs, double lhs)
 {
-	return 0.0;
+	string record = rhs " + " lhs;
+	history.push_back(record);
+	return rhs+lhs;
 }
 
-double Subtract(double a, double b)
+double NormalCalculator::Subtract(double rhs, double lhs)
 {
-	return 0.0;
+	string record = rhs " - " lhs;
+	history.push_back(record);
+	return rhs-lhs;
 }
 
-double Divide(double a, double b)
+double NormalCalculator::Divide(double rhs, double lhs)
 {
-	return 0.0;
+	string record = rhs " / " lhs;
+	history.push_back(record);
+	return rhs/lhs;
 }
 
-double Multiply(double a, double b)
+double NormalCalculator::Multiply(double rhs, double lhs)
 {
-	return 0.0;
+	string record = rhs " x " lhs;
+	history.push_back(record);
+	return rhs*lhs;
 }
 
-double Power(double a, double b)
+double NormalCalculator::Power(double base, double exponent)
 {
-	return 0.0;
+	string record = rhs " ^ " lhs;
+	history.push_back(record);
+	return pow(base, exponent)
 }
 
-double Log(double a, double b)
+double NormalCalculator::Log(double num)
 {
-	return 0.0;
+	string record = "log(" num ")";
+	history.push_back(record);
+	return log(num);
 }
 
-double Factorial(double a, double b)
+double NormalCalculator::Factorial(double num)
 {
-	return 0.0;
+	string record = num "!";
+	history.push_back(record);
+	return FactorialHelper(num);
 }
 
-double History(double a, double b)
+vector<string> NormalCalculator::PrintHistory() const
 {
-	return 0.0;
+	return history;
 }
+
+
 
 NormalCalculator::NormalCalculator()
 {
@@ -53,4 +69,18 @@ NormalCalculator::NormalCalculator()
 
 NormalCalculator::~NormalCalculator()
 {
+}
+
+//Private
+
+double NormalCalculator::FactorialHelper(double x)
+{
+	if (x == 1 || x == 0)
+	{
+		return 1;
+	}
+	else
+	{
+		return x * FactorialHelper(x-1);
+	}
 }
