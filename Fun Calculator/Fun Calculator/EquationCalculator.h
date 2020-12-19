@@ -9,5 +9,9 @@
 #define EquationCalculator_h
 
 #include <stdio.h>
+#include <vector>
+
+double Catalan(double n);
+double PythagoreanTheorem(double a, double b);
 
 #endif /* EquationCalculator_h */
