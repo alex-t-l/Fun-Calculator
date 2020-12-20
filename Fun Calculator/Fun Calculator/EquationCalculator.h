@@ -10,8 +10,21 @@
 
 #include <stdio.h>
 #include <vector>
+#include <iostream>
+#include <tgmath.h> //For Sqrt
+using namespace std;
 
+class EquationCalculator{
+    
+public:
 double Catalan(double n);
-double PythagoreanTheorem(double a, double b);
+//Can solve for root(c=a2+b2) which is hypotenuse or for leg root(b=c2﹣a2)
+double PythagoreanTheoremHypotenuse(double a, double b);
+double PythagoreanTheoremLeg(double c, double a);
+void QuadraticFormula(double a, double b, double c);
+double Slope(double x1, double y1, double x2, double y2);
 
+private:
+    vector<string> history;
+};
 #endif /* EquationCalculator_h */

@@ -9,49 +9,49 @@
 
 double NormalCalculator::Add(double rhs, double lhs)
 {
-	string record = rhs + " + " + lhs;
+	string record = to_string(rhs) + " + " + to_string(lhs);
 	history.push_back(record);
 	return rhs+lhs;
 }
 
 double NormalCalculator::Subtract(double rhs, double lhs)
 {
-	string record = rhs + " - " + lhs;
+	string record = to_string(rhs) + " - " + to_string(lhs);
 	history.push_back(record);
 	return rhs-lhs;
 }
 
 double NormalCalculator::Divide(double rhs, double lhs)
 {
-	string record = rhs + " / " + lhs;
+	string record = to_string(rhs) + " / " + to_string(lhs);
 	history.push_back(record);
 	return rhs/lhs;
 }
 
 double NormalCalculator::Multiply(double rhs, double lhs)
 {
-	string record = rhs + " x " + lhs;
+	string record = to_string(rhs) + " x " + to_string(lhs);
 	history.push_back(record);
 	return rhs*lhs;
 }
 
 double NormalCalculator::Power(double base, double exponent)
 {
-	string record = base + " ^ " + exponent;
+	string record = to_string(base) + " ^ " + to_string(exponent);
 	history.push_back(record);
-	return pow(base, exponent)
+    return pow(base, exponent);
 }
 
 double NormalCalculator::Log(double num)
 {
-	string record = "log(" + num + ")";
+	string record = "log(" + to_string(num) + ")";
 	history.push_back(record);
 	return log(num);
 }
 
 double NormalCalculator::Factorial(double num)
 {
-	string record = num + "!";
+	string record = to_string(num) + "!";
 	history.push_back(record);
 	return FactorialHelper(num);
 }
