@@ -45,15 +45,17 @@ double NormalCalculator::Power(double base, double exponent)
 double NormalCalculator::Log(double num)
 {
 	string record = "log(" + to_string(num) + ")";
-	history.push_back(record);
-	return log(num);
+	double return_val = log(num);
+	history.push_back(record, return_val);
+	return return_val;
 }
 
 double NormalCalculator::Factorial(double num)
 {
 	string record = to_string(num) + "!";
-	history.push_back(record);
-	return FactorialHelper(num);
+	double return_val = FactorialHelper(num);
+	history.push_back(record, to_string(return_val);
+	return return_val;
 }
 
 vector<string> NormalCalculator::PrintHistory() const

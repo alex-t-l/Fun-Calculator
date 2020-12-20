@@ -35,7 +35,7 @@ public:
 
 	vector<string> PrintHistory() const;
 private:
-	vector<string> history;
+	vector <pair<string, string> history;
 	double FactorialHelper(double x);
 };
 #endif /* NormalCalculator_h */

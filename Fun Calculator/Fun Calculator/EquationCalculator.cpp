@@ -8,18 +8,24 @@
 #include "EquationCalculator.h"
 using namespace std;
 
+
 double EquationCalculator::Catalan(double n)
 {
-	if (n == 0 || n == 1)
-	{
-		return 1;
-	}
-	int return_value = 0;
-	for (int i = 0; i < n; i++) {
-		return_value += Catalan(i) * Catalan(n - i - 1);
-	}
-    history.push_back("Catalan " + to_string(n));
+    double return_value = CatalanHelper(n);
+    history.push_back("Catalan " + to_string(n), to_string(return_value));
 	return return_value;
+}
+
+double EquationCalculator::CatalanHelper(double n)
+{
+    if (n == 0 || n == 1)
+    {
+        return 1;
+    }
+    int return_value = 0;
+    for (int i = 0; i < n; i++) {
+        return_value += CatalanHelper(i) * CatalanHelper(n - i - 1);
+    }
 }
 
 //Solve for hypotenuse c = sqrt(a^2 + b^2)
