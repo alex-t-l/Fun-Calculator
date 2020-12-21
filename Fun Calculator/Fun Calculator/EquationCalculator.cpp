@@ -40,6 +40,38 @@ double EquationCalculator::PythagoreanTheoremLeg(double c, double a){
     return sqrt((c * c) - (a * a));
 }
 
+string EquationCalculator::DerivativeHelper(string pTerm)
+{
+
+    return string();
+}
+
+string EquationCalculator::Derivative(string& function)
+{
+    istringstream is(function);
+
+    string pTerm, result = " "; 
+    while (is >> pTerm)
+    {
+        if (pTerm == "+")
+        {
+            result += " + ";
+            continue;
+        }
+        if (pTerm == "-")
+        {
+            result += " - ";
+            continue;
+        }
+        else
+        {
+            result += DerivativeHelper(pTerm);
+        }
+    }
+    history.push_back("Derivative of " + function + " is " + result); 
+    return result;
+}
+
 //Code is from https://www.programiz.com/cpp-programming/examples/quadratic-roots
 void EquationCalculator::QuadraticFormula(double a, double b, double c){
     double x1, x2, discriminant, real, imaginary;
