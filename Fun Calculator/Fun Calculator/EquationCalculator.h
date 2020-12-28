@@ -12,7 +12,7 @@
 #include <vector>
 #include <iostream>
 #include <tgmath.h> //For Sqrt
-#include <
+
 using namespace std;
 
 class EquationCalculator{
@@ -31,6 +31,7 @@ double Slope(double x1, double y1, double x2, double y2);
 
 
 private:
-    vector<pair<string, string> history;
+    vector<pair<string, string>> history;
 };
+
 #endif /* EquationCalculator_h */

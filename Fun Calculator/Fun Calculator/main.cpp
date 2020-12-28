@@ -35,6 +35,7 @@ int main() {
             break;
         case 2:
             cout << "Equational Calculator" << endl;
+            cout << ""
             //do stuff
             break;
     }

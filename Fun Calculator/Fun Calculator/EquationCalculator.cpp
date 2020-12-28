@@ -50,7 +50,7 @@ string EquationCalculator::Derivative(string& function)
 {
     istringstream is(function);
 
-    string pTerm, result = " "; 
+    string pTerm, result = " ";
     while (is >> pTerm)
     {
         if (pTerm == "+")
@@ -68,7 +68,7 @@ string EquationCalculator::Derivative(string& function)
             result += DerivativeHelper(pTerm);
         }
     }
-    history.push_back("Derivative of " + function + " is " + result); 
+    history.push_back("Derivative of " + function + " is " + result);
     return result;
 }
 
